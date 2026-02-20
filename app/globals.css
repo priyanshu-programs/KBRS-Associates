@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", ui-serif, Georgia, serif;
+
+  /* Warm Stone — Primary Palette (60-30-10 Rule) */
+  --color-bg-primary: #FAF9F7;
+  --color-bg-secondary: #F2F0EC;
+  --color-accent: #B87333;
+  --color-accent-hover: #A3652D;
+  --color-accent-light: #D4956A;
+
+  /* Text & UI */
+  --color-ink: #1C1917;
+  --color-ink-muted: #78716C;
+  --color-line: #E7E5E4;
+  --color-stone: #292524;
+
+  /* Semantic Colors */
+  --color-success: #2E7D4F;
+  --color-warning: #D4A017;
+  --color-error: #B91C1C;
+  --color-info: #2A4A7F;
+}
+
+/* ======================================
+   BASE STYLES
+   Typography: Lora (headings) + Inter (body)
+   h1: 56px | h2: 36px | body: 16px
+   Spacing base unit: 4px
+   Border radius: 0px
+   ====================================== */
+@layer base {
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-primary text-ink font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    @apply font-serif font-medium tracking-tight;
+    font-size: 56px;
+    line-height: 1.1;
+  }
+
+  h2 {
+    @apply font-serif font-medium tracking-tight;
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold tracking-tight;
+  }
+
+  /* Focus-visible: Keyboard users only */
+  *:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  /* All interactive elements */
+  a,
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  select {
+    cursor: pointer;
+  }
+
+  a {
+    transition: color 200ms ease;
+  }
+
+  /* Global: No border radius (0px) */
+  *,
+  *::before,
+  *::after {
+    border-radius: 0 !important;
+  }
+
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  .btn-primary,
+  .btn-black,
+  .btn-outline {
+    border-radius: 8px !important;
+  }
+}
+
+/* ======================================
+   COMPONENTS
+   ====================================== */
+@layer components {
+  .container-wide {
+    @apply w-full max-w-[1920px] mx-auto px-4 md:px-10 lg:px-13;
+  }
+
+  /* ---- Buttons ---- */
+  .btn-primary {
+    border-radius: 8px !important;
+    @apply bg-accent text-white px-7 py-3.5 font-medium font-sans transition-all duration-200 cursor-pointer hover:bg-accent-hover hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0;
+  }
+
+  .btn-black {
+    border-radius: 8px !important;
+    @apply bg-stone text-white px-6 py-3 font-medium font-sans transition-all duration-200 cursor-pointer hover:opacity-90 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0;
+  }
+
+  .btn-outline {
+    border-radius: 8px !important;
+    @apply border-2 border-stone text-stone px-6 py-3 font-medium font-sans transition-all duration-200 cursor-pointer hover:bg-stone hover:text-white hover:-translate-y-0.5 active:scale-[0.98];
+  }
+
+  /* ---- Labels ---- */
+  .label-caps {
+    @apply font-sans text-xs md:text-sm tracking-[0.15em] uppercase font-medium text-accent;
+  }
+
+  /* ---- Cards ---- */
+  .card-hover {
+    @apply transition-all duration-300 cursor-pointer;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(28, 25, 23, 0.08);
+  }
+}
+
+/* ======================================
+   ACCESSIBILITY: Reduced Motion
+   ====================================== */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
