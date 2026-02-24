@@ -10,9 +10,9 @@ export default function Navbar() {
 
     const navLinks = [
         { name: "Home", href: "/" },
-        { name: "About", href: "#about" },
-        { name: "Services", href: "#services" },
-        { name: "Team", href: "#team" },
+        { name: "About", href: "/#about" },
+        { name: "Services", href: "/#services" },
+        { name: "Team", href: "/#team" },
     ];
 
     return (
@@ -53,7 +53,7 @@ export default function Navbar() {
                         </a>
                     ))}
                     <a
-                        href="#contact"
+                        href="/#contact"
                         className="group relative overflow-hidden bg-accent text-white text-sm py-2 px-6 !rounded-[6px] font-medium transition-all duration-300 hover:bg-accent-hover hover:shadow-lg flex items-center justify-center"
                     >
                         {/* Diagonal Shine */}
@@ -100,7 +100,7 @@ export default function Navbar() {
                         </a>
                     ))}
                     <a
-                        href="#contact"
+                        href="/#contact"
                         className="group relative overflow-hidden bg-accent text-white text-center py-3 mt-2 !rounded-[6px] font-medium transition-all duration-300 hover:bg-accent-hover hover:shadow-lg flex items-center justify-center"
                         onClick={() => setIsOpen(false)}
                     >
