@@ -9,7 +9,7 @@ import Vision from "@/components/Vision";
 
 export default function HomePage() {
     return (
-        <div className="min-h-screen bg-bg-primary">
+        <div className="relative min-h-screen bg-bg-primary overflow-x-clip w-full max-w-[100vw]">
             <Navbar />
             <main>
                 <Hero />
