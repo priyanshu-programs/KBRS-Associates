@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { Instagram, Twitter, Facebook } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0a0a0a] text-white pt-32 pb-0 relative overflow-hidden font-sans">
+        <footer id="contact" className="bg-[#0A1726] text-white pt-32 pb-0 relative overflow-hidden font-sans">
             <div className="w-full px-6 md:px-12 lg:px-20 relative z-10">
                 {/* Top Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-28">
@@ -15,16 +18,16 @@ export default function Footer() {
                             <div className="bg-white p-2 rounded-sm inline-block">
                                 <Image
                                     src="/CA-India-Logo.jpg"
-                                    alt="KBRS & ASSOCIATES Logo"
+                                    alt="KBRS & ASSOCIATES. Logo"
                                     width={24}
                                     height={24}
                                     className="h-6 w-auto mix-blend-multiply"
                                 />
                             </div>
-                            <span className="font-serif font-bold text-lg tracking-wide uppercase">KBRS & ASSOCIATES</span>
+                            <span className="font-serif font-bold text-lg tracking-wide uppercase">KBRS & ASSOCIATES.</span>
                         </div>
                         <p className="text-stone-300 text-[15px] leading-[1.8] mt-2 max-w-[280px]">
-                            KBRS & ASSOCIATES is a trusted CA firm with years of experience, offering expert services in financial compliance, taxation, and advisory.
+                            KBRS & ASSOCIATES. is a trusted CA firm with years of experience, offering expert services in financial compliance, taxation, and advisory.
                         </p>
                     </div>
 
@@ -47,7 +50,7 @@ export default function Footer() {
 
                     {/* Social Column */}
                     <div className="flex flex-col gap-6">
-                        <h4 className="font-sans text-[17px] font-semibold text-white tracking-wide">Social</h4>
+                        <h4 className="font-sans text-[17px] font-semibold text-white tracking-wide">Socials</h4>
                         <div className="flex flex-col gap-4">
                             <a href="#" className="w-fit relative after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 flex items-center gap-3 text-stone-300 hover:text-white transition-colors text-[15px]">
                                 <Twitter size={18} strokeWidth={1.5} /> Twitter (X)
@@ -97,7 +100,7 @@ export default function Footer() {
                             <a href="#" className="relative after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 after:bg-[#F37920] after:transition-transform after:duration-300 hover:after:scale-x-100 text-[#F37920] hover:text-[#ff8d3b] transition-colors font-medium">Terms & Conditions</a>
                             <a href="#" className="relative after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 text-stone-300 hover:text-white transition-colors">Privacy Policy</a>
                         </div>
-                        <p className="text-stone-300">© {new Date().getFullYear()} KBRS & ASSOCIATES. All rights reserved.</p>
+                        <p className="text-stone-300">© 2026 KBRS & ASSOCIATES. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -108,19 +111,28 @@ export default function Footer() {
                     maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
                     WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
                 }}>
-                <div
+                <motion.div
                     className="flex w-max"
-                    style={{ animation: 'ticker 40s linear infinite' }}
+
+                    initial={{ x: "0%" }}
+                    whileInView={{ x: ["0%", "-25%"] }}
+                    viewport={{ once: false, amount: 0.1 }}
+
+                    transition={{
+                        repeat: Infinity,
+                        duration: 40,
+                        ease: "linear",
+                    }}
                 >
                     {[...Array(4)].map((_, i) => (
                         <span
                             key={i}
-                            className="font-sans font-extrabold text-[15vw] leading-[0.75] text-white/[0.04] whitespace-nowrap tracking-tight shrink-0 px-8"
+                            className="font-serif font-extrabold text-[15vw] leading-[0.75] text-white/[0.04] whitespace-nowrap tracking-tight shrink-0 px-8"
                         >
-                            KBRS & ASSOCIATES
+                            KBRS & ASSOCIATES.
                         </span>
                     ))}
-                </div>
+                </motion.div>
             </div>
             {/* Inline styles for the animation since standard Tailwind v4 might need it configured in globals */}
             <style dangerouslySetInnerHTML={{

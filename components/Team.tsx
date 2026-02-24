@@ -151,7 +151,7 @@ export default function Team() {
                             </div>
 
                             {/* Content Section */}
-                            <div className="flex-1 p-8 md:p-12 overflow-y-auto modal-scroll">
+                            <div className="flex-1 p-8 md:p-12 overflow-y-auto modal-scroll" data-lenis-prevent>
                                 <div className="flex flex-col gap-2 mb-6">
                                     <h3 className="text-2xl md:text-3xl font-serif text-ink tracking-tight">
                                         {selectedMember.modalName}
