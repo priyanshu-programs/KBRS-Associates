@@ -54,7 +54,7 @@ export default function Testimonials() {
                                     src="https://framerusercontent.com/images/hUvl62PeOMVDv3mGNm2Q9eNpfig.png"
                                     alt="Sarah Mitchell"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover hover:scale-110 transition-transform duration-700"
                                     sizes="64px"
                                 />
                             </motion.div>
