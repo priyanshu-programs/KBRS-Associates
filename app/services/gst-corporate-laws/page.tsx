@@ -115,23 +115,25 @@ export default function GSTCorporateLawsPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                                className="bg-white p-8 md:p-10 lg:p-12 rounded-[32px] md:rounded-[40px] border border-line shadow-sm hover:shadow-[0_24px_50px_-12px_rgba(10,10,10,0.1)] transition-all duration-500 group"
+                                className="h-full"
                             >
-                                <h3 className="text-2xl md:text-3xl font-serif text-ink mb-6 transition-colors group-hover:text-[#2272A5]">
-                                    {service.title}
-                                </h3>
-                                <ul className="flex flex-col gap-4">
-                                    {service.points.map((point, pIdx) => (
-                                        <li key={pIdx} className="flex gap-4 items-start">
-                                            <div className="mt-1 flex-shrink-0 text-[#2272A5]/70 group-hover:text-[#2272A5] transition-colors">
-                                                <CheckCircle2 className="w-5 h-5" />
-                                            </div>
-                                            <p className="text-base text-ink-muted leading-relaxed group-hover:text-ink/80 transition-colors">
-                                                {point}
-                                            </p>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div className="bg-white p-8 md:p-10 lg:p-12 rounded-[32px] md:rounded-[40px] border border-line shadow-sm hover:shadow-[0_24px_50px_-12px_rgba(10,10,10,0.1)] transition-all duration-500 group h-full">
+                                    <h3 className="text-2xl md:text-3xl font-serif text-ink mb-6 transition-colors group-hover:text-[#2272A5]">
+                                        {service.title}
+                                    </h3>
+                                    <ul className="flex flex-col gap-4">
+                                        {service.points.map((point, pIdx) => (
+                                            <li key={pIdx} className="flex gap-4 items-start">
+                                                <div className="mt-1 flex-shrink-0 text-[#2272A5]/70 group-hover:text-[#2272A5] transition-colors">
+                                                    <CheckCircle2 className="w-5 h-5" />
+                                                </div>
+                                                <p className="text-base text-ink-muted leading-relaxed group-hover:text-ink/80 transition-colors">
+                                                    {point}
+                                                </p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </motion.div>
                         ))}
                     </div>

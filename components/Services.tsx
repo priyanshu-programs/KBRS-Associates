@@ -172,20 +172,22 @@ export default function Services() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ type: "spring", damping: 58, stiffness: 350, delay: i * 0.1 }}
-                                className={`
-                                    ${service.colSpan} ${service.style}
+                                className={`h-full ${service.colSpan}`}
+                            >
+                                <div className={`
+                                    ${service.style}
                                     relative p-8 md:p-12 flex flex-col justify-between 
                                     group hover:shadow-[0_24px_50px_-12px_rgba(10,10,10,0.15)] hover:-translate-y-2 transition-all duration-700 cursor-pointer overflow-hidden 
-                                    min-h-[380px] rounded-[32px] md:rounded-[48px]
-                                `}
-                            >
-                                {service.link ? (
-                                    <Link href={service.link} className="block w-full h-full">
-                                        {CardContent}
-                                    </Link>
-                                ) : (
-                                    CardContent
-                                )}
+                                    min-h-[380px] h-full rounded-[32px] md:rounded-[48px]
+                                `}>
+                                    {service.link ? (
+                                        <Link href={service.link} className="block w-full h-full">
+                                            {CardContent}
+                                        </Link>
+                                    ) : (
+                                        CardContent
+                                    )}
+                                </div>
                             </motion.div>
                         );
                     })}
