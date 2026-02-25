@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="pt-16 md:pt-20 pb-2 md:pb-32 overflow-hidden">
+        <section className="pt-16 md:pt-20 pb-24 md:pb-32 overflow-hidden">
             <style dangerouslySetInnerHTML={{
                 __html: `
                 @keyframes heroSlideRight {
@@ -25,7 +25,7 @@ export default function Hero() {
             <div className="container-wide flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-0 md:items-stretch min-h-[calc(100vh-5rem)]">
                 {/* Image — bleeds ~112px wider on desktop for a fuller feel. Order 1 on mobile, 2 on desktop */}
                 <div
-                    className="relative h-[45vh] sm:h-[50vh] md:h-auto overflow-hidden md:-ml-14 md:-mr-14 md:mt-0 will-change-transform will-change-opacity hero-slide-up order-1 md:order-2"
+                    className="relative min-h-[40vh] sm:min-h-[500px] md:min-h-0 overflow-hidden md:-ml-14 md:-mr-14 md:mt-0 will-change-transform will-change-opacity hero-slide-up order-1 md:order-2"
                     style={{ animationDelay: '0.1s' }}
                 >
                     <Image
